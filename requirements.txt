@@ -1,0 +1,4 @@
+pyvips
+opencv-python
+albumentations
+joblib
