@@ -113,6 +113,9 @@ class Textgenerator:
         else: 
             bg = Image.open(background_img)
             bg_w, bg_h = bg.size
+            if (bg_w < W) or (bg_h < H) : 
+                bg = bg.resize( (W, H) )
+                bg_w, bg_h = bg.size
             rand_x = random.randint(0, bg_w-(font_w+(2*self.padding)))
             rand_y = random.randint(0, bg_h-(font_h+(2*self.padding)))
             area = (rand_x, rand_y, rand_x+(font_w+(2*self.padding)), rand_y+(font_h+(2*self.padding)))
