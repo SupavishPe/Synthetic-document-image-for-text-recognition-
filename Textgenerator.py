@@ -90,9 +90,11 @@ class Textgenerator:
 
     def font_rendering(self, text, font, background_img, text_color, background_color=(255,255,255)): 
         # image and mask 
+        font_name = font.split(r'/')[-1].replace('.ttf', '') 
         img = pyvips.Image.text(
             text,
             dpi=self.dpi,
+            font= font_name,
             fontfile=font)              
         mask_img_pil = self.convert_vips_to_pil(img)
 
